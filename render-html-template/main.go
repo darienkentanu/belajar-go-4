@@ -7,6 +7,11 @@ import (
 	"text/template"
 )
 
+// type Data struct {
+// 	title string
+// 	name  string
+// }
+
 func main() {
 	http.HandleFunc("/", route)
 
@@ -31,6 +36,8 @@ func route(w http.ResponseWriter, r *http.Request) {
 	// 	title string
 	// 	name  string
 	// }{title: "Belajar Golang", name: "darien"}
+
+	// var data = Data{"Belajar Golang", "Darien"}
 
 	err = tmpl.Execute(w, data)
 	if err != nil {
